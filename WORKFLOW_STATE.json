@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T16:53:49.0222253+07:00",
+  "updated_at": "2026-09-24T16:55:51.1522805+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -11,39 +11,10 @@
   },
   "current_phase": "P0",
   "phase_status": "IN_PROGRESS",
-  "phase_progress_percent": 6.67,
-  "active_task": "P0-02",
-  "next_task": "P0-02",
-  "task_locks": [
-    {
-      "task_id": "P0-02",
-      "owner_agent": "master-agent",
-      "status": "ACTIVE",
-      "allowed_paths": [
-        "AGENTS.md",
-        "README.md",
-        "WORKFLOW_STATE.json",
-        "RESUME.md",
-        "DECISIONS.md",
-        "docs/PRD_SI_Warehouse_Management.md",
-        "docs/SDD_SI_Warehouse_Management.md",
-        "docs/SI_Warehouse_Implementation_Task_List.md",
-        "docs/SI_Warehouse_Agent_Operating_Model.md",
-        "docs/specs/P0-02.md",
-        "apps/frontend/.gitkeep",
-        "apps/backend/.gitkeep",
-        "packages/.gitkeep",
-        "infra/.gitkeep",
-        "docs/ux/.gitkeep",
-        "docs/qa/.gitkeep",
-        "tests/.gitkeep"
-      ],
-      "start_checkpoint": "2026-09-24T16:51:07.6427281+07:00",
-      "heartbeat_at": "2026-09-24T16:51:07.6427281+07:00",
-      "expires_at": "2026-09-25T16:51:07.6700352+07:00",
-      "expiry_action": "Mark STALE and verify Git/status/evidence before resume."
-    }
-  ],
+  "phase_progress_percent": 13.33,
+  "active_task": null,
+  "next_task": "P0-03",
+  "task_locks": [],
   "pending_reviews": [
     {
       "task_id": "P0-01",
@@ -58,9 +29,10 @@
       "task_id": "P0-02",
       "reviewer": "master-agent technical acceptance under user-defined criteria",
       "revision": 1,
-      "status": "IN_REVIEW",
-      "evidence": "Inventory, secret, version, structure and scope checks passed",
-      "channel": "Current task execution"
+      "status": "APPROVED",
+      "evidence": "All user-defined P0-02 criteria passed; baseline commit 9ab03edefb99587052abf7eaa1498f11b7079ba6",
+      "channel": "Current task execution",
+      "approved_at": "2026-09-24T16:55:51.1522805+07:00"
     }
   ],
   "blockers": [],
@@ -76,8 +48,8 @@
     "P7": "NOT_STARTED"
   },
   "last_verified": {
-    "git_commit": "b6ce49095f6833a6d68430a904de1db88963ada6",
-    "working_tree": "P0-01 files committed; only source documents reserved for P0-02 repository baseline remain untracked.",
+    "git_commit": "9ab03edefb99587052abf7eaa1498f11b7079ba6",
+    "working_tree": "P0-02 baseline committed; completion metadata pending final commit.",
     "test_commands": [
       {
         "command": "git status --short; git branch --show-current; git log -1",
@@ -129,27 +101,41 @@
         "command": "repository structure and forbidden artifact check",
         "result": "PASS: only expected .gitkeep files; no Compose, migration, or application code",
         "checked_at": "2026-09-24T16:53:49.0222253+07:00"
+      },
+      {
+        "command": "corrected forbidden artifact check scoped to baseline directories",
+        "result": "PASS: only seven .gitkeep files; no Compose, migration, application code, or business feature",
+        "checked_at": "2026-09-24T16:55:51.1522805+07:00"
+      },
+      {
+        "command": "explicit git add allowlist plus staged-name comparison",
+        "result": "PASS: exactly 17 authorized P0-02 files",
+        "checked_at": "2026-09-24T16:55:51.1522805+07:00"
+      },
+      {
+        "command": "git diff --cached --check with Markdown trailing-space exceptions",
+        "result": "PASS",
+        "checked_at": "2026-09-24T16:55:51.1522805+07:00"
       }
     ],
     "migration_status": "NOT_RUN_DOCUMENTATION_ONLY",
-    "environment_status": "GIT_READY; APPLICATION_NOT_TESTED"
+    "environment_status": "REPOSITORY_BASELINE_READY; APPLICATION_NOT_CREATED"
   },
   "last_checkpoint": {
-    "summary": "P0-02 IN_REVIEW: source inventory/secret/version/structure/scope checks passed; explicit staging and commit pending.",
+    "summary": "P0-02 DONE: source documents and empty repository baseline committed; no business implementation; lock released. P0-03 is next but not started.",
     "evidence": [
+      "Baseline commit 9ab03edefb99587052abf7eaa1498f11b7079ba6",
       "docs/specs/P0-02.md revision 1",
-      "Five authorized source documents",
-      "README.md",
-      "Seven .gitkeep directory markers"
+      "Secret/version/structure/staged allowlist checks PASS",
+      "D-012 and D-013"
     ]
   },
   "next_actions": [
-    "Stage only the explicit P0-02 allowlist and verify staged names.",
-    "Commit repository baseline.",
-    "Record commit evidence, close P0-02, push, and verify clean working tree."
+    "Create and lock P0-03 Task Contract before defining Git workflow, branch protection, PR template, or Definition of Done.",
+    "Do not start business features or later phases."
   ],
   "task_statuses": {
     "P0-01": "DONE",
-    "P0-02": "IN_REVIEW"
+    "P0-02": "DONE"
   }
 }

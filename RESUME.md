@@ -4,29 +4,31 @@ Updated: 2026-09-24 (+07:00); exact time in WORKFLOW_STATE.json
 Updated by: master-agent
 
 Task ID: P0-02
-Status: IN_REVIEW
+Status: DONE
 
 ## Changed
 
-- Imported the five authorized source documents into the P0-02 Git scope
-- Added `docs/specs/P0-02.md` Task Contract and active lock
-- Added empty repository baseline directories using seven `.gitkeep` files
-- Updated README with repository structure and AGENTS.md safe start sequence
-- Added Operating Model version metadata 1.0 and decision D-012
-- No business feature, Docker Compose, dependency, or migration was created
+- Added AGENTS.md at repository root
+- Added PRD v1.7, SDD v1.6, Task List v1.0 and Operating Model v1.0 under docs
+- Added repository baseline directories via `.gitkeep`: apps/frontend, apps/backend, packages, infra, docs/ux, docs/qa and tests
+- Added `docs/specs/P0-02.md` and expanded README with structure/safe start sequence
+- Updated workflow state and decisions; no application code, Compose, dependency, migration, or business feature
 
 ## Verification
 
-- Initial untracked inventory: exactly AGENTS.md plus the four authorized docs; no unrelated file
-- Secret scan: no private key or token signature; only documented `managed-secret` placeholders in SDD
-- Versions: PRD 1.7, SDD 1.6, Task List 1.0, Operating Model 1.0
-- Structure: expected directories exist and contain only `.gitkeep` markers
-- Forbidden artifacts: no Compose, migration, application source, or business feature
-- Pending: explicit staged allowlist, commit/push, and clean working tree verification
+- Initial untracked inventory: exactly five authorized source files; no unrelated file
+- Secret scan: no private key/token signature or risky filename; reviewed two `managed-secret` placeholders in SDD example
+- Versions passed: PRD 1.7, SDD 1.6, Task List 1.0, Operating Model 1.0
+- Baseline paths contain only the seven expected `.gitkeep` files
+- Explicit staged allowlist passed: exactly 17 authorized paths; `git add -A` was not used
+- Whitespace/conflict check passed with Markdown trailing-space exceptions
+- Final remote SHA and clean working tree verification follows the completion metadata commit
 
 ## Evidence
-
-See WORKFLOW_STATE.json test commands and `docs/specs/P0-02.md` revision 1
+- Baseline commit: 9ab03edefb99587052abf7eaa1498f11b7079ba6
+- Contract: `docs/specs/P0-02.md` revision 1
+- Decisions: D-012 and D-013
+- Detailed command results: WORKFLOW_STATE.json `last_verified.test_commands`
 
 ## Blockers
 
@@ -34,6 +36,4 @@ None
 
 ## Next action
 
-1. Stage only explicit P0-02 files
-2. Verify staged allowlist and commit
-3. Record evidence, close P0-02, push, confirm clean tree
+P0-03 — Git workflow, branch protection, PR template and Definition of Done; not started and not locked
