@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T20:18:00+07:00",
+  "updated_at": "2026-09-24T20:20:00+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -18,9 +18,11 @@
     {
       "task_id": "P0-05",
       "owner_agent": "master-agent",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "allowed_paths": [
         "docs/specs/P0-05.md",
+        "docker-compose.dev.yml",
+        "infra/nginx/default.conf",
         "WORKFLOW_STATE.json",
         "RESUME.md",
         "DECISIONS.md"
@@ -69,19 +71,7 @@
       "approved_at": "2026-09-24T20:08:59.9506304+07:00"
     }
   ],
-  "blockers": [
-    {
-      "id": "B-P0-05-02",
-      "task_id": "P0-05",
-      "status": "OPEN",
-      "reason": "P0-05 needs MinIO credentials to validate Compose/runtime, but P0-06 alone owns .env.example and secret policy.",
-      "decision_owner": "user/project-owner",
-      "options": [
-        "Authorize documented non-production MinIO defaults until P0-06 replaces them.",
-        "Defer MinIO runtime/health acceptance to P0-06."
-      ]
-    }
-  ],
+  "blockers": [],
   "decisions_pending": [],
   "phase_progress": {
     "P0": "IN_PROGRESS",
@@ -224,7 +214,7 @@
     ]
   },
   "next_actions": [
-    "Await user/project-owner resolution of B-P0-05-02 before widening the P0-05 lock to Compose paths.",
+    "Expand the P0-05 lock and implement Compose wiring with documented non-production MinIO defaults; P0-06 must replace them.",
     "Do not create application code, Compose, migration, or business feature."
   ],
   "task_statuses": {
@@ -232,6 +222,6 @@
     "P0-02": "DONE",
     "P0-03": "DONE",
     "P0-04": "DONE",
-    "P0-05": "BLOCKED"
+    "P0-05": "IN_REVIEW"
   }
 }
