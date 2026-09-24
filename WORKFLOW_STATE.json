@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T20:15:10.9256608+07:00",
+  "updated_at": "2026-09-24T20:18:00+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -71,15 +71,14 @@
   ],
   "blockers": [
     {
-      "id": "B-P0-05-01",
+      "id": "B-P0-05-02",
       "task_id": "P0-05",
       "status": "OPEN",
-      "reason": "P0-05 requires health checks for frontend/backend, but P0-08 alone authorizes their shell and health endpoints.",
+      "reason": "P0-05 needs MinIO credentials to validate Compose/runtime, but P0-06 alone owns .env.example and secret policy.",
       "decision_owner": "user/project-owner",
       "options": [
-        "Defer application-service health acceptance to P0-08 while P0-05 builds Compose wiring/data-service health.",
-        "Authorize P0-05 minimal non-business health stubs.",
-        "Raise a Change Request to combine/reorder P0-05 and P0-08."
+        "Authorize documented non-production MinIO defaults until P0-06 replaces them.",
+        "Defer MinIO runtime/health acceptance to P0-06."
       ]
     }
   ],
@@ -225,7 +224,7 @@
     ]
   },
   "next_actions": [
-    "Await user/project-owner resolution of B-P0-05-01 before widening the P0-05 lock to Compose, Dockerfile or application paths.",
+    "Await user/project-owner resolution of B-P0-05-02 before widening the P0-05 lock to Compose paths.",
     "Do not create application code, Compose, migration, or business feature."
   ],
   "task_statuses": {

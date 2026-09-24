@@ -21,8 +21,8 @@ Status: BLOCKED
 
 ## Blockers
 
-B-P0-05-01 — choose whether P0-05 defers application health acceptance to P0-08, is authorized to create minimal non-business health stubs, or is combined/reordered through a Change Request.
+B-P0-05-02 — choose whether P0-05 may use documented non-production MinIO defaults until P0-06, or defer MinIO runtime/health acceptance to P0-06.
 
 ## Next action
 
-Wait for the project-owner decision, then expand the P0-05 lock only to paths needed by that decision.
+The user approved deferring frontend/backend health acceptance to P0-08 (D-018). Wait for the MinIO environment decision, then expand the P0-05 lock only to paths needed by that decision.
