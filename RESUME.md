@@ -3,7 +3,7 @@
 Updated: 2026-09-24 (+07:00); exact time in WORKFLOW_STATE.json
 Updated by: master-agent
 
-Task ID: P0-05
+Task ID: P0-06
 Status: DONE
 
 ## Changed

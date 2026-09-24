@@ -12,9 +12,9 @@
   "current_phase": "P0",
   "phase_status": "IN_PROGRESS",
   "phase_progress_percent": 20,
-  "active_task": "P0-06",
-  "next_task": "P0-06",
-  "task_locks": [{"task_id":"P0-06","owner_agent":"master-agent","status":"ACTIVE","allowed_paths":[".env.example",".gitignore","docs/specs/P0-06.md","docs/ENVIRONMENT_AND_SECRET_POLICY.md","docker-compose.dev.yml","WORKFLOW_STATE.json","RESUME.md","DECISIONS.md"]}],
+  "active_task": "P0-07",
+  "next_task": "P0-07",
+  "task_locks": [{"task_id":"P0-07","owner_agent":"master-agent","status":"ACTIVE","allowed_paths":["apps/frontend/package.json","apps/frontend/package-lock.json","apps/backend/package.json","apps/backend/package-lock.json","docs/DEPENDENCY_REGISTER.md","docs/specs/P0-07.md","WORKFLOW_STATE.json","RESUME.md","DECISIONS.md"]}],
   "pending_reviews": [
     {
       "task_id": "P0-01",
@@ -205,6 +205,7 @@
     "P0-03": "DONE",
     "P0-04": "DONE",
     "P0-05": "DONE",
-    "P0-06": "IN_PROGRESS"
+    "P0-06": "DONE",
+    "P0-07": "IN_PROGRESS"
   }
 }
