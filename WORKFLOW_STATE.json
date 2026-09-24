@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T17:05:49.8436473+07:00",
+  "updated_at": "2026-09-24T17:06:36.7295191+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -11,30 +11,10 @@
   },
   "current_phase": "P0",
   "phase_status": "IN_PROGRESS",
-  "phase_progress_percent": 13.33,
-  "active_task": "P0-03",
-  "next_task": "P0-03",
-  "task_locks": [
-    {
-      "task_id": "P0-03",
-      "owner_agent": "master-agent",
-      "status": "ACTIVE",
-      "allowed_paths": [
-        "docs/specs/P0-03.md",
-        "docs/GIT_WORKFLOW.md",
-        "docs/DEFINITION_OF_DONE.md",
-        ".github/pull_request_template.md",
-        "README.md",
-        "WORKFLOW_STATE.json",
-        "RESUME.md",
-        "DECISIONS.md"
-      ],
-      "start_checkpoint": "2026-09-24T17:04:06.9517331+07:00",
-      "heartbeat_at": "2026-09-24T17:04:06.9517331+07:00",
-      "expires_at": "2026-09-25T17:04:06.9770055+07:00",
-      "expiry_action": "Mark STALE and verify Git/status/evidence before resume."
-    }
-  ],
+  "phase_progress_percent": 20,
+  "active_task": null,
+  "next_task": "P0-04",
+  "task_locks": [],
   "pending_reviews": [
     {
       "task_id": "P0-01",
@@ -58,9 +38,10 @@
       "task_id": "P0-03",
       "reviewer": "master-agent technical policy review under user-authorized task",
       "revision": 1,
-      "status": "IN_REVIEW",
-      "evidence": "Policy/template/DoD/link/secret/scope assertions passed",
-      "channel": "Current task execution"
+      "status": "APPROVED",
+      "evidence": "P0-03 policy criteria passed; commit 611b212159f9150591a7b94f7de39c4035e328e4",
+      "channel": "Current task execution",
+      "approved_at": "2026-09-24T17:06:36.7295191+07:00"
     }
   ],
   "blockers": [],
@@ -76,8 +57,8 @@
     "P7": "NOT_STARTED"
   },
   "last_verified": {
-    "git_commit": "9ab03edefb99587052abf7eaa1498f11b7079ba6",
-    "working_tree": "P0-02 baseline committed; completion metadata pending final commit.",
+    "git_commit": "611b212159f9150591a7b94f7de39c4035e328e4",
+    "working_tree": "P0-03 policy commit complete; completion metadata pending final commit.",
     "test_commands": [
       {
         "command": "git status --short; git branch --show-current; git log -1",
@@ -164,29 +145,38 @@
         "command": "P0-03 changed-path allowlist before staging",
         "result": "PASS: only seven policy/checkpoint paths changed before RESUME update",
         "checked_at": "2026-09-24T17:05:49.8436473+07:00"
+      },
+      {
+        "command": "explicit P0-03 staged allowlist comparison",
+        "result": "PASS: exactly eight authorized paths",
+        "checked_at": "2026-09-24T17:06:36.7295191+07:00"
+      },
+      {
+        "command": "P0-03 staged diff check",
+        "result": "PASS with Markdown hard-break whitespace exceptions",
+        "checked_at": "2026-09-24T17:06:36.7295191+07:00"
       }
     ],
     "migration_status": "NOT_RUN_DOCUMENTATION_ONLY",
-    "environment_status": "REPOSITORY_BASELINE_READY; APPLICATION_NOT_CREATED"
+    "environment_status": "REPOSITORY_BASELINE_READY; GIT_POLICY_DEFINED; APPLICATION_NOT_CREATED"
   },
   "last_checkpoint": {
-    "summary": "P0-03 IN_REVIEW: Git workflow, branch protection policy, reviewer matrix, BLOCKED handling, PR template and DoD created; content/scope checks pass.",
+    "summary": "P0-03 DONE: Git workflow, branch protection baseline, reviewer/BLOCKED policy, PR template and DoD committed; lock released. P0-04 is next but not started.",
     "evidence": [
+      "Policy commit 611b212159f9150591a7b94f7de39c4035e328e4",
       "docs/GIT_WORKFLOW.md",
       "docs/DEFINITION_OF_DONE.md",
       ".github/pull_request_template.md",
-      "docs/specs/P0-03.md revision 1",
-      "D-014"
+      "D-014 and D-015"
     ]
   },
   "next_actions": [
-    "Stage only the eight P0-03 allowlist files and verify names.",
-    "Commit policy deliverables.",
-    "Record commit evidence, close P0-03, push, and verify clean tree."
+    "Create and lock P0-04 Task Contract before selecting or locking technology versions.",
+    "Do not create application code, Compose, migration, or business feature."
   ],
   "task_statuses": {
     "P0-01": "DONE",
     "P0-02": "DONE",
-    "P0-03": "IN_REVIEW"
+    "P0-03": "DONE"
   }
 }
