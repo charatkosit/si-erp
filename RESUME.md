@@ -3,24 +3,21 @@
 Updated: 2026-09-24 (+07:00); exact time in WORKFLOW_STATE.json
 Updated by: master-agent
 
-Task ID: P0-08
+Task ID: R-STATE-01
 Status: DONE
 
 ## Changed
 
-- Created NestJS module shell, health controller and Swagger contract endpoint.
-- Created Angular standalone shell with empty feature routes and production Docker build.
-- Replaced the P0-05 frontend/backend placeholders with P0-08 application images; Nginx serves the SPA shell and preserves `/api`.
+- Created the reconciliation lock after detecting stale P0-04/P0-05 metadata in the state file.
+- Updated only workflow checkpoint metadata to agree with the pushed P0-08 result.
 
 ## Verification
 
-- Angular and NestJS multi-stage image builds: PASS with Node `24.21.0`.
-- `GET /`, `GET /items`, `/api/health/live`, `/api/health/ready`, and `/api/docs-json`: PASS through `http://localhost:8080`.
+- JSON parsing, reconciliation lock assertion and scoped diff check: PASS.
 
 ## Evidence
-- `docs/specs/P0-08.md`
-- `apps/frontend/Dockerfile`, `apps/backend/Dockerfile`
-- `docker-compose.dev.yml`, `infra/nginx/default.conf`
+- `docs/specs/R-STATE-01.md`
+- `WORKFLOW_STATE.json`
 
 ## Blockers
 
@@ -28,4 +25,4 @@ None.
 
 ## Next action
 
-P0-09 — set up TypeORM migration, database seed and test database under a new task lock.
+Create the P0-09 task lock before any TypeORM migration, seed or test-database work.

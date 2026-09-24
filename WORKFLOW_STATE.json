@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T21:35:00+07:00",
+  "updated_at": "2026-09-24T21:50:00+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -75,8 +75,8 @@
     "P7": "NOT_STARTED"
   },
   "last_verified": {
-    "git_commit": "f744687d24e4c44ae55869a7f099fc026fa9ad96",
-    "working_tree": "P0-04 baseline and completion checkpoint committed and pushed; clean-tree verification recorded in the final handoff.",
+    "git_commit": "01e1574c75213b14bebd9d922b435b4017638247",
+    "working_tree": "P0-08 approval checkpoint pushed; clean-tree verification recorded before R-STATE-01.",
     "test_commands": [
       {
         "command": "git status --short; git branch --show-current; git log -1",
@@ -191,22 +191,21 @@
       }
     ],
     "migration_status": "NOT_RUN_DOCUMENTATION_ONLY",
-    "environment_status": "REPOSITORY_BASELINE_READY; GIT_POLICY_DEFINED; TECHNOLOGY_BASELINE_DEFINED; APPLICATION_NOT_CREATED"
+    "environment_status": "APPLICATION_SHELL_READY; COMPOSE_SERVICES_RUNNING; P0-08_HEALTH_AND_SWAGGER_SMOKE_PASSED"
   },
   "last_checkpoint": {
-    "summary": "P0-04 DONE: supported Node, Angular, NestJS, PostgreSQL, Redis and official Docker image baseline committed and pushed; lock released. P0-05 is next.",
+    "summary": "P0-08 DONE: Angular shell, NestJS health endpoints, Swagger and reverse-proxy smoke tests passed; P0-09 is next after reconciliation lock closes.",
     "evidence": [
-      "Baseline commit f744687d24e4c44ae55869a7f099fc026fa9ad96",
-      "Completion checkpoint d5ba6be384750d2bba0a78a69f3a9fe57be75fc9",
-      "docs/TECHNOLOGY_COMPATIBILITY_MATRIX.md",
-      "docs/TECHNOLOGY_BASELINE.lock",
-      ".nvmrc",
-      "D-016 and D-017"
+      "P0-08 implementation commit e57306ee6d374b899271b3dd7ba7fb6b4aaf3d4d",
+      "P0-08 approval checkpoint 01e1574c75213b14bebd9d922b435b4017638247",
+      "P0-07 reconciliation commit 2b333625a63468ab78e576cf1fc9c7484c68849e",
+      "docs/specs/P0-08.md",
+      "RESUME.md"
     ]
   },
   "next_actions": [
-    "Expand the P0-05 lock and implement Compose wiring with documented non-production MinIO defaults; P0-06 must replace them.",
-    "Do not create application code, Compose, migration, or business feature."
+    "Finish R-STATE-01 verification and release its lock.",
+    "Create a dedicated P0-09 lock before any TypeORM migration, seed or test-database work."
   ],
   "task_statuses": {
     "P0-01": "DONE",
@@ -216,6 +215,7 @@
     "P0-05": "DONE",
     "P0-06": "DONE",
     "P0-07": "DONE",
-    "P0-08": "DONE"
+    "P0-08": "DONE",
+    "R-STATE-01": "DONE"
   }
 }
