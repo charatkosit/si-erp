@@ -14,7 +14,7 @@
   "phase_progress_percent": 20,
   "active_task": "P0-06",
   "next_task": "P0-06",
-  "task_locks": [{"task_id":"P0-06","owner_agent":"master-agent","status":"ACTIVE","allowed_paths":[".env.example","docs/specs/P0-06.md","docs/ENVIRONMENT_AND_SECRET_POLICY.md","docker-compose.dev.yml","WORKFLOW_STATE.json","RESUME.md","DECISIONS.md"]}],
+  "task_locks": [{"task_id":"P0-06","owner_agent":"master-agent","status":"ACTIVE","allowed_paths":[".env.example",".gitignore","docs/specs/P0-06.md","docs/ENVIRONMENT_AND_SECRET_POLICY.md","docker-compose.dev.yml","WORKFLOW_STATE.json","RESUME.md","DECISIONS.md"]}],
   "pending_reviews": [
     {
       "task_id": "P0-01",
