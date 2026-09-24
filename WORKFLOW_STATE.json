@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T17:06:36.7295191+07:00",
+  "updated_at": "2026-09-24T20:07:37.9351652+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -12,9 +12,28 @@
   "current_phase": "P0",
   "phase_status": "IN_PROGRESS",
   "phase_progress_percent": 20,
-  "active_task": null,
+  "active_task": "P0-04",
   "next_task": "P0-04",
-  "task_locks": [],
+  "task_locks": [
+    {
+      "task_id": "P0-04",
+      "owner_agent": "master-agent",
+      "status": "ACTIVE",
+      "allowed_paths": [
+        "docs/specs/P0-04.md",
+        "docs/TECHNOLOGY_COMPATIBILITY_MATRIX.md",
+        "docs/TECHNOLOGY_BASELINE.lock",
+        ".nvmrc",
+        "WORKFLOW_STATE.json",
+        "RESUME.md",
+        "DECISIONS.md"
+      ],
+      "start_checkpoint": "2026-09-24T20:02:09.9888397+07:00",
+      "heartbeat_at": "2026-09-24T20:07:37.9351652+07:00",
+      "expires_at": "2026-09-25T20:02:09.9888397+07:00",
+      "expiry_action": "Mark STALE and verify repository status, upstream-version evidence and scope before resume."
+    }
+  ],
   "pending_reviews": [
     {
       "task_id": "P0-01",
@@ -171,12 +190,13 @@
     ]
   },
   "next_actions": [
-    "Create and lock P0-04 Task Contract before selecting or locking technology versions.",
+    "Run P0-04 scope and Git verification, commit the accepted baseline, then complete technical acceptance.",
     "Do not create application code, Compose, migration, or business feature."
   ],
   "task_statuses": {
     "P0-01": "DONE",
     "P0-02": "DONE",
-    "P0-03": "DONE"
+    "P0-03": "DONE",
+    "P0-04": "IN_PROGRESS"
   }
 }

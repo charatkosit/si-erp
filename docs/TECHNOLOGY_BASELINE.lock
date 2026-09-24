@@ -1,0 +1,14 @@
+# SI Warehouse technology baseline lock
+# Source task: P0-04
+# Format: key=value; update only through a locked task and review.
+node.version=24.21.0
+node.channel=LTS
+angular.version=22.2.0
+nestjs.version=12.1.0
+postgres.version=18.6
+redis.version=8.10.2
+image.node=node:24.21.0-bookworm-slim
+image.postgres=postgres:18.6-bookworm
+image.redis=redis:8.10.2-trixie
+image.digest.capture=deferred-to-P0-05-per-platform
+package-manager-lockfiles=deferred-to-P0-07-no-package-manifests-exist
