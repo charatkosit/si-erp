@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T20:20:00+07:00",
+  "updated_at": "2026-09-24T21:20:00+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -12,9 +12,9 @@
   "current_phase": "P0",
   "phase_status": "IN_PROGRESS",
   "phase_progress_percent": 20,
-  "active_task": "P0-07",
-  "next_task": "P0-07",
-  "task_locks": [{"task_id":"P0-07","owner_agent":"master-agent","status":"ACTIVE","allowed_paths":["apps/frontend/package.json","apps/frontend/package-lock.json","apps/backend/package.json","apps/backend/package-lock.json","docs/DEPENDENCY_REGISTER.md","docs/specs/P0-07.md","WORKFLOW_STATE.json","RESUME.md","DECISIONS.md"]}],
+  "active_task": "P0-08",
+  "next_task": "P0-08",
+  "task_locks": [{"task_id":"P0-08","owner_agent":"master-agent","status":"IN_REVIEW","allowed_paths":["apps/frontend/**","apps/backend/**","packages/**","infra/nginx/default.conf","docker-compose.dev.yml","docs/specs/P0-08.md","WORKFLOW_STATE.json","RESUME.md","DECISIONS.md"]}],
   "pending_reviews": [
     {
       "task_id": "P0-01",
@@ -206,6 +206,7 @@
     "P0-04": "DONE",
     "P0-05": "DONE",
     "P0-06": "DONE",
-    "P0-07": "IN_PROGRESS"
+    "P0-07": "DONE",
+    "P0-08": "IN_REVIEW"
   }
 }
