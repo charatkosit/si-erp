@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T16:44:39.0612523+07:00",
+  "updated_at": "2026-09-24T16:49:20.7633165+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -40,7 +40,7 @@
   },
   "last_verified": {
     "git_commit": "b6ce49095f6833a6d68430a904de1db88963ada6",
-    "working_tree": "P0-01 completion committed; metadata evidence update pending commit.",
+    "working_tree": "P0-01 files committed; only source documents reserved for P0-02 repository baseline remain untracked.",
     "test_commands": [
       {
         "command": "git status --short; git branch --show-current; git log -1",
@@ -78,7 +78,7 @@
     "environment_status": "GIT_READY; APPLICATION_NOT_TESTED"
   },
   "last_checkpoint": {
-    "summary": "P0-01 revision 1 approved by user/project-owner; all acceptance criteria passed; task closed and lock released. P0-02 is next but not started.",
+    "summary": "P0-01 DONE and reconciled against repository. No active lock or blocker; source documents remain untracked for P0-02 baseline.",
     "evidence": [
       "docs/specs/P0-01.md revision 1 approved",
       "DECISIONS.md D-011",
