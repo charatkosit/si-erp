@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T21:20:00+07:00",
+  "updated_at": "2026-09-24T21:35:00+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -12,9 +12,9 @@
   "current_phase": "P0",
   "phase_status": "IN_PROGRESS",
   "phase_progress_percent": 20,
-  "active_task": "P0-08",
-  "next_task": "P0-08",
-  "task_locks": [{"task_id":"P0-08","owner_agent":"master-agent","status":"IN_REVIEW","allowed_paths":["apps/frontend/**","apps/backend/**","packages/**","infra/nginx/default.conf","docker-compose.dev.yml","docs/specs/P0-08.md","WORKFLOW_STATE.json","RESUME.md","DECISIONS.md"]}],
+  "active_task": null,
+  "next_task": "P0-09",
+  "task_locks": [],
   "pending_reviews": [
     {
       "task_id": "P0-01",
@@ -51,6 +51,15 @@
       "evidence": "All P0-04 acceptance criteria passed; user approved Redis 8.10.2 license (D-016); baseline commit f744687d24e4c44ae55869a7f099fc026fa9ad96 pushed to origin/main",
       "channel": "Current task execution",
       "approved_at": "2026-09-24T20:08:59.9506304+07:00"
+    },
+    {
+      "task_id": "P0-08",
+      "reviewer": "user/project-owner",
+      "revision": 1,
+      "status": "APPROVED",
+      "evidence": "User message: \"ดำเนินการต่อ\" after P0-08 IN_REVIEW handoff and explicit close request",
+      "channel": "Current task conversation",
+      "approved_at": "2026-09-24T21:35:00+07:00"
     }
   ],
   "blockers": [],
@@ -207,6 +216,6 @@
     "P0-05": "DONE",
     "P0-06": "DONE",
     "P0-07": "DONE",
-    "P0-08": "IN_REVIEW"
+    "P0-08": "DONE"
   }
 }

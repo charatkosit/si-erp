@@ -4,7 +4,7 @@ Updated: 2026-09-24 (+07:00); exact time in WORKFLOW_STATE.json
 Updated by: master-agent
 
 Task ID: P0-08
-Status: IN_REVIEW
+Status: DONE
 
 ## Changed
 
@@ -24,8 +24,8 @@ Status: IN_REVIEW
 
 ## Blockers
 
-Awaiting project-owner review; P0-08 is not marked DONE by this agent.
+None.
 
 ## Next action
 
-Review P0-08 and, on approval, reconcile the pre-existing uncommitted `docs/specs/P0-07.md` status update before advancing.
+P0-09 — set up TypeORM migration, database seed and test database under a new task lock.
