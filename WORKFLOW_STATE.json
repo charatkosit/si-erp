@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T16:49:20.7633165+07:00",
+  "updated_at": "2026-09-24T16:53:49.0222253+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -12,9 +12,38 @@
   "current_phase": "P0",
   "phase_status": "IN_PROGRESS",
   "phase_progress_percent": 6.67,
-  "active_task": null,
+  "active_task": "P0-02",
   "next_task": "P0-02",
-  "task_locks": [],
+  "task_locks": [
+    {
+      "task_id": "P0-02",
+      "owner_agent": "master-agent",
+      "status": "ACTIVE",
+      "allowed_paths": [
+        "AGENTS.md",
+        "README.md",
+        "WORKFLOW_STATE.json",
+        "RESUME.md",
+        "DECISIONS.md",
+        "docs/PRD_SI_Warehouse_Management.md",
+        "docs/SDD_SI_Warehouse_Management.md",
+        "docs/SI_Warehouse_Implementation_Task_List.md",
+        "docs/SI_Warehouse_Agent_Operating_Model.md",
+        "docs/specs/P0-02.md",
+        "apps/frontend/.gitkeep",
+        "apps/backend/.gitkeep",
+        "packages/.gitkeep",
+        "infra/.gitkeep",
+        "docs/ux/.gitkeep",
+        "docs/qa/.gitkeep",
+        "tests/.gitkeep"
+      ],
+      "start_checkpoint": "2026-09-24T16:51:07.6427281+07:00",
+      "heartbeat_at": "2026-09-24T16:51:07.6427281+07:00",
+      "expires_at": "2026-09-25T16:51:07.6700352+07:00",
+      "expiry_action": "Mark STALE and verify Git/status/evidence before resume."
+    }
+  ],
   "pending_reviews": [
     {
       "task_id": "P0-01",
@@ -24,6 +53,14 @@
       "evidence": "User message: approved P0-01 revision 1 and current task conversation as approval channel",
       "channel": "Current task conversation",
       "approved_at": "2026-09-24T16:42:59.1511051+07:00"
+    },
+    {
+      "task_id": "P0-02",
+      "reviewer": "master-agent technical acceptance under user-defined criteria",
+      "revision": 1,
+      "status": "IN_REVIEW",
+      "evidence": "Inventory, secret, version, structure and scope checks passed",
+      "channel": "Current task execution"
     }
   ],
   "blockers": [],
@@ -72,25 +109,47 @@
         "command": "git diff --cached --check; completion assertions; JSON parse",
         "result": "PASS",
         "checked_at": "2026-09-24T16:44:39.0612523+07:00"
+      },
+      {
+        "command": "git untracked inventory before P0-02",
+        "result": "PASS: exactly five authorized source documents",
+        "checked_at": "2026-09-24T16:53:49.0222253+07:00"
+      },
+      {
+        "command": "high-risk secret filename/token/private-key scan",
+        "result": "PASS: no secrets; two managed-secret placeholders in SDD example reviewed",
+        "checked_at": "2026-09-24T16:53:49.0222253+07:00"
+      },
+      {
+        "command": "document version check",
+        "result": "PASS: PRD 1.7, SDD 1.6, Task List 1.0, Operating Model 1.0",
+        "checked_at": "2026-09-24T16:53:49.0222253+07:00"
+      },
+      {
+        "command": "repository structure and forbidden artifact check",
+        "result": "PASS: only expected .gitkeep files; no Compose, migration, or application code",
+        "checked_at": "2026-09-24T16:53:49.0222253+07:00"
       }
     ],
     "migration_status": "NOT_RUN_DOCUMENTATION_ONLY",
     "environment_status": "GIT_READY; APPLICATION_NOT_TESTED"
   },
   "last_checkpoint": {
-    "summary": "P0-01 DONE and reconciled against repository. No active lock or blocker; source documents remain untracked for P0-02 baseline.",
+    "summary": "P0-02 IN_REVIEW: source inventory/secret/version/structure/scope checks passed; explicit staging and commit pending.",
     "evidence": [
-      "docs/specs/P0-01.md revision 1 approved",
-      "DECISIONS.md D-011",
-      "Current task conversation approval",
-      "P0-01 completion commit b6ce49095f6833a6d68430a904de1db88963ada6"
+      "docs/specs/P0-02.md revision 1",
+      "Five authorized source documents",
+      "README.md",
+      "Seven .gitkeep directory markers"
     ]
   },
   "next_actions": [
-    "Prepare and obtain authorization for P0-02 Task Contract and lock before any work.",
-    "Do not start business features or later phases."
+    "Stage only the explicit P0-02 allowlist and verify staged names.",
+    "Commit repository baseline.",
+    "Record commit evidence, close P0-02, push, and verify clean working tree."
   ],
   "task_statuses": {
-    "P0-01": "DONE"
+    "P0-01": "DONE",
+    "P0-02": "IN_REVIEW"
   }
 }
