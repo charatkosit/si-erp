@@ -67,7 +67,7 @@
   },
   "last_verified": {
     "git_commit": "f744687d24e4c44ae55869a7f099fc026fa9ad96",
-    "working_tree": "P0-04 baseline committed and pushed; completion metadata pending final checkpoint commit.",
+    "working_tree": "P0-04 baseline and completion checkpoint committed and pushed; clean-tree verification recorded in the final handoff.",
     "test_commands": [
       {
         "command": "git status --short; git branch --show-current; git log -1",
@@ -188,6 +188,7 @@
     "summary": "P0-04 DONE: supported Node, Angular, NestJS, PostgreSQL, Redis and official Docker image baseline committed and pushed; lock released. P0-05 is next.",
     "evidence": [
       "Baseline commit f744687d24e4c44ae55869a7f099fc026fa9ad96",
+      "Completion checkpoint d5ba6be384750d2bba0a78a69f3a9fe57be75fc9",
       "docs/TECHNOLOGY_COMPATIBILITY_MATRIX.md",
       "docs/TECHNOLOGY_BASELINE.lock",
       ".nvmrc",

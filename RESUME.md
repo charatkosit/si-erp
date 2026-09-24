@@ -17,10 +17,11 @@ Status: DONE
 
 - Official source review, JSON/task-lock, cross-file, scope and secret assertions: PASS.
 - Explicit staged allowlist: exactly seven authorized paths; staged diff check passed with intentional Markdown hard-break whitespace exceptions only.
-- Commit `f744687d24e4c44ae55869a7f099fc026fa9ad96` pushed; remote `origin/main` matches.
+- Baseline commit `f744687d24e4c44ae55869a7f099fc026fa9ad96` and completion checkpoint `d5ba6be384750d2bba0a78a69f3a9fe57be75fc9` were pushed; remote `origin/main` matches the latter.
 
 ## Evidence
-- Commit: `f744687d24e4c44ae55869a7f099fc026fa9ad96`
+- Baseline commit: `f744687d24e4c44ae55869a7f099fc026fa9ad96`
+- Completion checkpoint: `d5ba6be384750d2bba0a78a69f3a9fe57be75fc9`
 - `docs/specs/P0-04.md` revision 1
 - `docs/TECHNOLOGY_COMPATIBILITY_MATRIX.md`
 - `docs/TECHNOLOGY_BASELINE.lock` and `.nvmrc`
