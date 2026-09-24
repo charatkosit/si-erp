@@ -4,25 +4,27 @@ Updated: 2026-09-24 (+07:00); exact time in WORKFLOW_STATE.json
 Updated by: master-agent
 
 Task ID: P0-04
-Status: IN_PROGRESS
+Status: DONE
 
 ## Changed
 
-- Reconciled an untracked P0-04 contract/baseline draft with the state source of truth and created the P0-04 lock.
-- Verified Node 24.21.0, Angular 22.2.0, NestJS 12, PostgreSQL 18.6 and official Docker image tags against upstream sources.
-- Corrected the Redis image from non-existent `redis:8.10.2-bookworm` to official `redis:8.10.2-trixie`.
+- Created the supported-version matrix and lock manifest, with `.nvmrc` pinned to Node 24.21.0.
+- Verified Node 24.21.0, Angular 22.2.0, NestJS 12.1.0, PostgreSQL 18.6 and official Docker image tags against upstream sources.
+- Corrected Redis from non-existent `redis:8.10.2-bookworm` to official `redis:8.10.2-trixie`; the project owner approved its license under D-016.
 - No CI workflow, application code, dependency, Compose or migration was created.
 
 ## Verification
 
-- Official source review: PASS for the selected versions and image tags after Redis tag correction.
-- User/project-owner approved Redis 8.10.2 licensing and operational fit; D-016 resolves B-P0-04-01.
+- Official source review, JSON/task-lock, cross-file, scope and secret assertions: PASS.
+- Explicit staged allowlist: exactly seven authorized paths; staged diff check passed with intentional Markdown hard-break whitespace exceptions only.
+- Commit `f744687d24e4c44ae55869a7f099fc026fa9ad96` pushed; remote `origin/main` matches.
 
 ## Evidence
+- Commit: `f744687d24e4c44ae55869a7f099fc026fa9ad96`
 - `docs/specs/P0-04.md` revision 1
 - `docs/TECHNOLOGY_COMPATIBILITY_MATRIX.md`
 - `docs/TECHNOLOGY_BASELINE.lock` and `.nvmrc`
-- D-016 in DECISIONS.md
+- D-016 and D-017 in DECISIONS.md
 
 ## Blockers
 
@@ -30,4 +32,4 @@ None.
 
 ## Next action
 
-Run scope/secret/Git checks, commit the accepted compatibility baseline, record technical acceptance and prepare P0-05.
+P0-05 — create and lock its task contract before creating Docker Compose or Dockerfiles. It must consume this baseline without widening it silently.
