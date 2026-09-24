@@ -12,27 +12,9 @@
   "current_phase": "P0",
   "phase_status": "IN_PROGRESS",
   "phase_progress_percent": 20,
-  "active_task": "P0-05",
-  "next_task": "P0-05",
-  "task_locks": [
-    {
-      "task_id": "P0-05",
-      "owner_agent": "master-agent",
-      "status": "ACTIVE",
-      "allowed_paths": [
-        "docs/specs/P0-05.md",
-        "docker-compose.dev.yml",
-        "infra/nginx/default.conf",
-        "WORKFLOW_STATE.json",
-        "RESUME.md",
-        "DECISIONS.md"
-      ],
-      "start_checkpoint": "2026-09-24T20:15:10.9256608+07:00",
-      "heartbeat_at": "2026-09-24T20:15:10.9256608+07:00",
-      "expires_at": "2026-09-25T20:15:10.9256608+07:00",
-      "expiry_action": "Mark STALE and verify task ordering and source state before resume."
-    }
-  ],
+  "active_task": "P0-06",
+  "next_task": "P0-06",
+  "task_locks": [{"task_id":"P0-06","owner_agent":"master-agent","status":"ACTIVE","allowed_paths":[".env.example","docs/specs/P0-06.md","docs/ENVIRONMENT_AND_SECRET_POLICY.md","docker-compose.dev.yml","WORKFLOW_STATE.json","RESUME.md","DECISIONS.md"]}],
   "pending_reviews": [
     {
       "task_id": "P0-01",
@@ -222,6 +204,7 @@
     "P0-02": "DONE",
     "P0-03": "DONE",
     "P0-04": "DONE",
-    "P0-05": "IN_REVIEW"
+    "P0-05": "DONE",
+    "P0-06": "IN_PROGRESS"
   }
 }

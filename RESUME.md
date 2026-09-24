@@ -4,7 +4,7 @@ Updated: 2026-09-24 (+07:00); exact time in WORKFLOW_STATE.json
 Updated by: master-agent
 
 Task ID: P0-05
-Status: IN_REVIEW
+Status: DONE
 
 ## Changed
 
@@ -25,4 +25,4 @@ None.
 
 ## Next action
 
-The user approved MinIO development defaults (D-019). Expand the P0-05 lock and implement Compose wiring; P0-06 must replace those defaults.
+P0-06 — create `.env.example` and environment/secret policy; replace P0-05 development-only defaults.

@@ -12,9 +12,9 @@ services:
   postgres:
     image: postgres:18.6-bookworm
     environment:
-      POSTGRES_USER: warehouse_app
-      POSTGRES_PASSWORD: development-only-not-a-secret
-      POSTGRES_DB: warehouse
+      POSTGRES_USER: ${POSTGRES_USER:?copy .env.example to .env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?copy .env.example to .env}
+      POSTGRES_DB: ${POSTGRES_DB:?copy .env.example to .env}
     volumes: ["postgres_data:/var/lib/postgresql"]
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U warehouse_app -d warehouse"]
@@ -32,9 +32,9 @@ services:
     image: chrislusf/seaweedfs:4.47
     command: mini -dir=/data
     environment:
-      AWS_ACCESS_KEY_ID: development-only
-      AWS_SECRET_ACCESS_KEY: development-only-not-a-secret
-      S3_BUCKET: warehouse-evidence
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:?copy .env.example to .env}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:?copy .env.example to .env}
+      S3_BUCKET: ${OBJECT_STORAGE_BUCKET:?copy .env.example to .env}
     volumes: ["seaweedfs_data:/data"]
     healthcheck:
       test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://localhost:9333/cluster/status"]
