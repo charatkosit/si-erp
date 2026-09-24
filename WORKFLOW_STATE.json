@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T20:08:59.9506304+07:00",
+  "updated_at": "2026-09-24T20:15:10.9256608+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -12,9 +12,25 @@
   "current_phase": "P0",
   "phase_status": "IN_PROGRESS",
   "phase_progress_percent": 20,
-  "active_task": null,
+  "active_task": "P0-05",
   "next_task": "P0-05",
-  "task_locks": [],
+  "task_locks": [
+    {
+      "task_id": "P0-05",
+      "owner_agent": "master-agent",
+      "status": "BLOCKED",
+      "allowed_paths": [
+        "docs/specs/P0-05.md",
+        "WORKFLOW_STATE.json",
+        "RESUME.md",
+        "DECISIONS.md"
+      ],
+      "start_checkpoint": "2026-09-24T20:15:10.9256608+07:00",
+      "heartbeat_at": "2026-09-24T20:15:10.9256608+07:00",
+      "expires_at": "2026-09-25T20:15:10.9256608+07:00",
+      "expiry_action": "Mark STALE and verify task ordering and source state before resume."
+    }
+  ],
   "pending_reviews": [
     {
       "task_id": "P0-01",
@@ -53,7 +69,20 @@
       "approved_at": "2026-09-24T20:08:59.9506304+07:00"
     }
   ],
-  "blockers": [],
+  "blockers": [
+    {
+      "id": "B-P0-05-01",
+      "task_id": "P0-05",
+      "status": "OPEN",
+      "reason": "P0-05 requires health checks for frontend/backend, but P0-08 alone authorizes their shell and health endpoints.",
+      "decision_owner": "user/project-owner",
+      "options": [
+        "Defer application-service health acceptance to P0-08 while P0-05 builds Compose wiring/data-service health.",
+        "Authorize P0-05 minimal non-business health stubs.",
+        "Raise a Change Request to combine/reorder P0-05 and P0-08."
+      ]
+    }
+  ],
   "decisions_pending": [],
   "phase_progress": {
     "P0": "IN_PROGRESS",
@@ -196,13 +225,14 @@
     ]
   },
   "next_actions": [
-    "Create and lock P0-05 Task Contract before creating Docker Compose or Dockerfiles.",
+    "Await user/project-owner resolution of B-P0-05-01 before widening the P0-05 lock to Compose, Dockerfile or application paths.",
     "Do not create application code, Compose, migration, or business feature."
   ],
   "task_statuses": {
     "P0-01": "DONE",
     "P0-02": "DONE",
     "P0-03": "DONE",
-    "P0-04": "DONE"
+    "P0-04": "DONE",
+    "P0-05": "BLOCKED"
   }
 }

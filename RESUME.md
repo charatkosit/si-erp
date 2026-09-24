@@ -3,34 +3,26 @@
 Updated: 2026-09-24 (+07:00); exact time in WORKFLOW_STATE.json
 Updated by: master-agent
 
-Task ID: P0-04
-Status: DONE
+Task ID: P0-05
+Status: BLOCKED
 
 ## Changed
 
-- Created the supported-version matrix and lock manifest, with `.nvmrc` pinned to Node 24.21.0.
-- Verified Node 24.21.0, Angular 22.2.0, NestJS 12.1.0, PostgreSQL 18.6 and official Docker image tags against upstream sources.
-- Corrected Redis from non-existent `redis:8.10.2-bookworm` to official `redis:8.10.2-trixie`; the project owner approved its license under D-016.
-- No CI workflow, application code, dependency, Compose or migration was created.
+- Created and locked P0-05 task contract in BLOCKED state.
+- No Compose, Dockerfile, application code, dependency or migration was created.
 
 ## Verification
 
-- Official source review, JSON/task-lock, cross-file, scope and secret assertions: PASS.
-- Explicit staged allowlist: exactly seven authorized paths; staged diff check passed with intentional Markdown hard-break whitespace exceptions only.
-- Baseline commit `f744687d24e4c44ae55869a7f099fc026fa9ad96` and completion checkpoint `d5ba6be384750d2bba0a78a69f3a9fe57be75fc9` were pushed; remote `origin/main` matches the latter.
+- Source review found a sequencing conflict between P0-05 health acceptance and P0-08 ownership of application shells/health endpoints.
 
 ## Evidence
-- Baseline commit: `f744687d24e4c44ae55869a7f099fc026fa9ad96`
-- Completion checkpoint: `d5ba6be384750d2bba0a78a69f3a9fe57be75fc9`
-- `docs/specs/P0-04.md` revision 1
-- `docs/TECHNOLOGY_COMPATIBILITY_MATRIX.md`
-- `docs/TECHNOLOGY_BASELINE.lock` and `.nvmrc`
-- D-016 and D-017 in DECISIONS.md
+- `docs/specs/P0-05.md` revision 1
+- B-P0-05-01 in WORKFLOW_STATE.json
 
 ## Blockers
 
-None.
+B-P0-05-01 — choose whether P0-05 defers application health acceptance to P0-08, is authorized to create minimal non-business health stubs, or is combined/reordered through a Change Request.
 
 ## Next action
 
-P0-05 — create and lock its task contract before creating Docker Compose or Dockerfiles. It must consume this baseline without widening it silently.
+Wait for the project-owner decision, then expand the P0-05 lock only to paths needed by that decision.
