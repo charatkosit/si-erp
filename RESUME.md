@@ -3,37 +3,31 @@
 Updated: 2026-09-24 (+07:00); exact time in WORKFLOW_STATE.json
 Updated by: master-agent
 
-Task ID: P0-02
-Status: DONE
+Task ID: P0-03
+Status: IN_REVIEW
 
 ## Changed
 
-- Added AGENTS.md at repository root
-- Added PRD v1.7, SDD v1.6, Task List v1.0 and Operating Model v1.0 under docs
-- Added repository baseline directories via `.gitkeep`: apps/frontend, apps/backend, packages, infra, docs/ux, docs/qa and tests
-- Added `docs/specs/P0-02.md` and expanded README with structure/safe start sequence
-- Updated workflow state and decisions; no application code, Compose, dependency, migration, or business feature
+- Added Git branch/commit/PR/squash-merge policy and reviewer matrix
+- Defined main branch protection baseline and repository-admin activation checklist
+- Defined BLOCKED, stale lock, Change Request and waiver handling
+- Added pull request template and shared Definition of Ready/Done
+- Added README links and decision D-014
+- No CI workflow, application code, dependency, Compose or migration change
 
 ## Verification
 
-- Initial untracked inventory: exactly five authorized source files; no unrelated file
-- Secret scan: no private key/token signature or risky filename; reviewed two `managed-secret` placeholders in SDD example
-- Versions passed: PRD 1.7, SDD 1.6, Task List 1.0, Operating Model 1.0
-- Baseline paths contain only the seven expected `.gitkeep` files
-- Explicit staged allowlist passed: exactly 17 authorized paths; `git add -A` was not used
-- Whitespace/conflict check passed with Markdown trailing-space exceptions
-- Final remote SHA and clean working tree verification follows the completion metadata commit
-
-## Evidence
-- Baseline commit: 9ab03edefb99587052abf7eaa1498f11b7079ba6
-- Contract: `docs/specs/P0-02.md` revision 1
-- Decisions: D-012 and D-013
-- Detailed command results: WORKFLOW_STATE.json `last_verified.test_commands`
+- Policy content, PR template and DoD assertions: PASS
+- README relative links: PASS
+- High-risk secret signature scan for new files: PASS
+- Changed-path allowlist: PASS
+- GitHub CLI is not installed; actual GitHub ruleset activation is documented as an administrator action and CI checks wait for P0-11 stable job names
+- Pending: explicit staged allowlist, commit/push and clean tree
 
 ## Blockers
 
-None
+None for P0-03 policy acceptance
 
 ## Next action
 
-P0-03 — Git workflow, branch protection, PR template and Definition of Done; not started and not locked
+Stage exact P0-03 paths, commit policy deliverables, record evidence, close task and verify clean origin/main

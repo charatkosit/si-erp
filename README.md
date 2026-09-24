@@ -46,3 +46,12 @@ Directory เปล่าใช้ `.gitkeep` เพื่อให้ Git เ�
 ## Current scope
 
 P0-02 จัดทำเฉพาะ repository baseline และเอกสารต้นทาง ยังไม่มี Frontend/Backend business feature, Docker Compose, dependencies หรือ database migration
+
+## Contribution workflow
+
+- [Git workflow and branch protection](docs/GIT_WORKFLOW.md)
+- [Definition of Ready and Done](docs/DEFINITION_OF_DONE.md)
+- [Pull request template](.github/pull_request_template.md)
+
+All changes require one locked Task ID and the reviewers defined by risk and path.
+

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T16:55:51.1522805+07:00",
+  "updated_at": "2026-09-24T17:05:49.8436473+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -12,9 +12,29 @@
   "current_phase": "P0",
   "phase_status": "IN_PROGRESS",
   "phase_progress_percent": 13.33,
-  "active_task": null,
+  "active_task": "P0-03",
   "next_task": "P0-03",
-  "task_locks": [],
+  "task_locks": [
+    {
+      "task_id": "P0-03",
+      "owner_agent": "master-agent",
+      "status": "ACTIVE",
+      "allowed_paths": [
+        "docs/specs/P0-03.md",
+        "docs/GIT_WORKFLOW.md",
+        "docs/DEFINITION_OF_DONE.md",
+        ".github/pull_request_template.md",
+        "README.md",
+        "WORKFLOW_STATE.json",
+        "RESUME.md",
+        "DECISIONS.md"
+      ],
+      "start_checkpoint": "2026-09-24T17:04:06.9517331+07:00",
+      "heartbeat_at": "2026-09-24T17:04:06.9517331+07:00",
+      "expires_at": "2026-09-25T17:04:06.9770055+07:00",
+      "expiry_action": "Mark STALE and verify Git/status/evidence before resume."
+    }
+  ],
   "pending_reviews": [
     {
       "task_id": "P0-01",
@@ -33,6 +53,14 @@
       "evidence": "All user-defined P0-02 criteria passed; baseline commit 9ab03edefb99587052abf7eaa1498f11b7079ba6",
       "channel": "Current task execution",
       "approved_at": "2026-09-24T16:55:51.1522805+07:00"
+    },
+    {
+      "task_id": "P0-03",
+      "reviewer": "master-agent technical policy review under user-authorized task",
+      "revision": 1,
+      "status": "IN_REVIEW",
+      "evidence": "Policy/template/DoD/link/secret/scope assertions passed",
+      "channel": "Current task execution"
     }
   ],
   "blockers": [],
@@ -116,26 +144,49 @@
         "command": "git diff --cached --check with Markdown trailing-space exceptions",
         "result": "PASS",
         "checked_at": "2026-09-24T16:55:51.1522805+07:00"
+      },
+      {
+        "command": "P0-03 policy content assertions",
+        "result": "PASS: branch protection, merge, reviewer, BLOCKED/stale/CR controls present",
+        "checked_at": "2026-09-24T17:05:49.8436473+07:00"
+      },
+      {
+        "command": "PR template and Definition of Done assertions",
+        "result": "PASS",
+        "checked_at": "2026-09-24T17:05:49.8436473+07:00"
+      },
+      {
+        "command": "README relative link validation and high-risk secret signature scan",
+        "result": "PASS",
+        "checked_at": "2026-09-24T17:05:49.8436473+07:00"
+      },
+      {
+        "command": "P0-03 changed-path allowlist before staging",
+        "result": "PASS: only seven policy/checkpoint paths changed before RESUME update",
+        "checked_at": "2026-09-24T17:05:49.8436473+07:00"
       }
     ],
     "migration_status": "NOT_RUN_DOCUMENTATION_ONLY",
     "environment_status": "REPOSITORY_BASELINE_READY; APPLICATION_NOT_CREATED"
   },
   "last_checkpoint": {
-    "summary": "P0-02 DONE: source documents and empty repository baseline committed; no business implementation; lock released. P0-03 is next but not started.",
+    "summary": "P0-03 IN_REVIEW: Git workflow, branch protection policy, reviewer matrix, BLOCKED handling, PR template and DoD created; content/scope checks pass.",
     "evidence": [
-      "Baseline commit 9ab03edefb99587052abf7eaa1498f11b7079ba6",
-      "docs/specs/P0-02.md revision 1",
-      "Secret/version/structure/staged allowlist checks PASS",
-      "D-012 and D-013"
+      "docs/GIT_WORKFLOW.md",
+      "docs/DEFINITION_OF_DONE.md",
+      ".github/pull_request_template.md",
+      "docs/specs/P0-03.md revision 1",
+      "D-014"
     ]
   },
   "next_actions": [
-    "Create and lock P0-03 Task Contract before defining Git workflow, branch protection, PR template, or Definition of Done.",
-    "Do not start business features or later phases."
+    "Stage only the eight P0-03 allowlist files and verify names.",
+    "Commit policy deliverables.",
+    "Record commit evidence, close P0-03, push, and verify clean tree."
   ],
   "task_statuses": {
     "P0-01": "DONE",
-    "P0-02": "DONE"
+    "P0-02": "DONE",
+    "P0-03": "IN_REVIEW"
   }
 }
