@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project": "SI Warehouse Management",
-  "updated_at": "2026-09-24T16:42:59.1511051+07:00",
+  "updated_at": "2026-09-24T16:44:39.0612523+07:00",
   "updated_by": "master-agent",
   "source_documents": {
     "prd": "PRD_SI_Warehouse_Management.md v1.7",
@@ -39,8 +39,8 @@
     "P7": "NOT_STARTED"
   },
   "last_verified": {
-    "git_commit": "ce1e65a7e975ad28794a8cd24460c2f6bc486003",
-    "working_tree": "README committed and pushed; project documents remain untracked pending P0-01 review.",
+    "git_commit": "b6ce49095f6833a6d68430a904de1db88963ada6",
+    "working_tree": "P0-01 completion committed; metadata evidence update pending commit.",
     "test_commands": [
       {
         "command": "git status --short; git branch --show-current; git log -1",
@@ -67,6 +67,11 @@
         "command": "P0-01 completion assertions and scoped Git diff",
         "result": "PASS",
         "checked_at": "2026-09-24T16:43:47.7347569+07:00"
+      },
+      {
+        "command": "git diff --cached --check; completion assertions; JSON parse",
+        "result": "PASS",
+        "checked_at": "2026-09-24T16:44:39.0612523+07:00"
       }
     ],
     "migration_status": "NOT_RUN_DOCUMENTATION_ONLY",
@@ -78,7 +83,7 @@
       "docs/specs/P0-01.md revision 1 approved",
       "DECISIONS.md D-011",
       "Current task conversation approval",
-      "Commit to be recorded after verification"
+      "P0-01 completion commit b6ce49095f6833a6d68430a904de1db88963ada6"
     ]
   },
   "next_actions": [

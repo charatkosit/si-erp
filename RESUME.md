@@ -60,3 +60,5 @@ Git ในเครื่องมี ownership ต่างกันระห�
 ## P0-01 completion checkpoint
 
 ผู้ใช้/เจ้าของโครงการอนุมัติ P0-01 revision 1 และยืนยันช่องทางอนุมัติใน task สนทนานี้เมื่อ 2026-09-24 ตาม D-011 ทุก acceptance criterion ผ่าน ไม่มี blocker ค้าง Master เปลี่ยนสถานะเป็น DONE และปลด lock งานถัดไปคือ P0-02 ซึ่งยังไม่เริ่ม
+
+Evidence commit: b6ce49095f6833a6d68430a904de1db88963ada6 — docs: complete P0-01 governance contract. Metadata checkpoint will be committed separately and pushed to origin/main.
